@@ -1,8 +1,9 @@
 from random import randint
-
+import codecs
+import sys
 
 ### Wczytywanie haseł z pliku ###
-plik_z_haslami = open("hasla.txt", "r")
+plik_z_haslami = codecs.open("hasla.txt", 'r', 'utf-8')
 haslaa = plik_z_haslami.read()
 plik_z_haslami.close()
 
@@ -31,6 +32,9 @@ haslo.remove(".")
 for i in haslo:
     if i == "\n":
         haslo.remove("\n")
+for i in haslo:
+    if i == "\r":
+        haslo.remove("\r")
 print(haslo)
 ### Wisielec ###
 grafika = [ """
