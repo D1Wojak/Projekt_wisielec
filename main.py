@@ -11,7 +11,7 @@ plik_z_haslami.close()
 hasla = str(haslaa.lower())
 licznik = 0
 for i in hasla:
-    if i == ".":
+    if  i == ".":
         licznik += 1
 
 
@@ -21,18 +21,12 @@ print(nr_wylosowanego_hasla)
 
 ### Wczytywanie wylosownaego hasła ###
 haslo = []
-poprzednie = []
 licznik1 = 0
+
 for i in hasla:
-    haslo += i
     if i == ".":
-        poprzednie = haslo
-        haslo = []
         licznik1 +=1
-    #break if licznik1 == licznik
+    if licznik1 == nr_wylosowanego_hasla:
+        haslo += i
 
-
-
-print(poprzednie)
-print("")
 print(haslo)
