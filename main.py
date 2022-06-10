@@ -122,7 +122,7 @@ while zycia < 9:
     litera = input()
     if len(litera) > 1:
         print("Popelniłeś błąd! Podaj WYŁĄCZNIE JEDNĄ litere!")
-
+        litera = input()
     if litera in haslo:
         for i in range(len(haslo)):
             if haslo[i] == litera:
