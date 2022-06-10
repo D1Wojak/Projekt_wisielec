@@ -117,11 +117,12 @@ while zycia < 9:
         for i in range(len(haslo)):
             if haslo[i] == litera:
                 tablica[i] = litera
+        if tablica == haslo:
+            print(nick, "Brawo, wygrałeś!")
+            break
+
     else:
         zycia +=1
         print(grafika[zycia-1])
         if zycia == 9:
             print("Przegrałeś " + nick)
-
-
-
