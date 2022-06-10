@@ -35,7 +35,7 @@ for i in haslo:
 for i in haslo:
     if i == "\r":
         haslo.remove("\r")
-print(haslo)
+
 ### Wisielec ###
 grafika = [ """
 #                   #
@@ -115,8 +115,10 @@ while zycia < 9:
     print(nick + " pozostało Ci :"+ str(9-zycia) + " zyc.")
     print(" ".join(tablica))
 
-    print("Podaj litere " + str(nick) + " :")
+    print("Podaj JEDNA litere " + str(nick) + " :")
     litera = input()
+    if len(litera) > 1:
+        print("Popelniłeś błąd! Podaj WYŁĄCZNIE JEDNĄ litere!")
     if litera in haslo:
         for i in range(len(haslo)):
             if haslo[i] == litera:
