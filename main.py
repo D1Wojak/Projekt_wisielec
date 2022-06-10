@@ -28,5 +28,10 @@ for i in hasla:
         licznik1 +=1
     if licznik1 == nr_wylosowanego_hasla:
         haslo += i
+haslo.remove(".")
+for i in haslo:
+    if i == "\n":
+        haslo.remove("\n")
+
 
 print(haslo)
