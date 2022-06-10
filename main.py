@@ -15,25 +15,24 @@ print("2 - Średni (wyrazy do 10 liter) ")
 print("3 - Trudny (wyrazy do 15 liter) ")
 print("4 - Niemożliwy (15 i więcej liter) ")
 poziom = input()
+poziom = int(poziom)
 
 ### Wczytywanie haseł z pliku ###
-
+if poziom <1 or poziom >4:
+    print("Nie wybrałeś żadnego poziomu trudności! Następny błąd będzie skutkował wyłączeniem się programu!")
+    poziom = input()
+    poziom = int(poziom)
 if poziom == 1:
     plik_z_haslami = codecs.open("hasla1.txt", 'r', 'utf-8')
-    haslaa = plik_z_haslami.read()
-    plik_z_haslami.close()
 if poziom == 2:
     plik_z_haslami = codecs.open("hasla2.txt", 'r', 'utf-8')
-    haslaa = plik_z_haslami.read()
-    plik_z_haslami.close()
 if poziom == 3:
     plik_z_haslami = codecs.open("hasla3.txt", 'r', 'utf-8')
-    haslaa = plik_z_haslami.read()
-    plik_z_haslami.close()
 if poziom == 4:
     plik_z_haslami = codecs.open("hasla4.txt", 'r', 'utf-8')
-    haslaa = plik_z_haslami.read()
-    plik_z_haslami.close()
+
+haslaa = plik_z_haslami.read()
+plik_z_haslami.close()
 
 ### Licznik haseł ###
 hasla = str(haslaa.lower())
@@ -128,11 +127,9 @@ grafika = [ """
 #       |     / \   #
 #       |           #
 #     _____         #"""]
-
-print("Podaj imię: ")
-nick = input()
-
 tablica = list(haslo)
+tablica1= list(haslo)
+print(tablica)
 zycia = 0
 for i in range(len(haslo)):
     if tablica[i] == " ":
@@ -148,7 +145,8 @@ while zycia < 9:
     print("Podaj JEDNA litere " + str(nick) + " :")
     litera = input()
     if len(litera) > 1:
-        print("Popelniłeś błąd! Podaj WYŁĄCZNIE JEDNĄ litere!")
+        print("Popelniłeś błąd! Podaj WYŁĄCZNIE JEDNĄ litere! Następny błąd będzie skutkował utratą życia!")
+        litera = input()
 
     if litera in haslo:
         for i in range(len(haslo)):
@@ -163,3 +161,5 @@ while zycia < 9:
         print(grafika[zycia-1])
         if zycia == 9:
             print("Przegrałeś " + nick)
+            print("Poprawna odpowiedź to: ")
+            print("".join(tablica1))
