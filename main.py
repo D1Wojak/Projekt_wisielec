@@ -147,7 +147,7 @@ while zycia < 9:
     if len(litera) > 1:
         print("Popelniłeś błąd! Podaj WYŁĄCZNIE JEDNĄ litere! Następny błąd będzie skutkował utratą życia!")
         litera = input()
-        litera = litera.lower()
+    litera = litera.lower()
 
     if litera in haslo:
         for i in range(len(haslo)):
