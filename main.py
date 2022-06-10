@@ -108,7 +108,10 @@ nick = input()
 tablica = list(haslo)
 zycia = 0
 for i in range(len(haslo)):
-    tablica[i] = "_"
+    if tablica[i] == " ":
+        tablica[i]=" "
+    else:
+        tablica[i] = "_"
 
 
 while zycia < 9:
@@ -119,6 +122,7 @@ while zycia < 9:
     litera = input()
     if len(litera) > 1:
         print("Popelniłeś błąd! Podaj WYŁĄCZNIE JEDNĄ litere!")
+
     if litera in haslo:
         for i in range(len(haslo)):
             if haslo[i] == litera:
