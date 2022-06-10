@@ -2,11 +2,38 @@ from random import randint
 import codecs
 import sys
 
-### Wczytywanie haseł z pliku ###
-plik_z_haslami = codecs.open("hasla.txt", 'r', 'utf-8')
-haslaa = plik_z_haslami.read()
-plik_z_haslami.close()
+#Podanie imienia
 
+print("Podaj imię: ")
+nick = input()
+
+### Wybór poziomu trudności
+
+print("Wybierz poziom trudności : ")
+print("1 - Łatwy (wyrazy do 5 liter) ")
+print("2 - Średni (wyrazy do 10 liter) ")
+print("3 - Trudny (wyrazy do 15 liter) ")
+print("4 - Niemożliwy (15 i więcej liter) ")
+poziom = input()
+
+### Wczytywanie haseł z pliku ###
+
+if poziom == 1:
+    plik_z_haslami = codecs.open("hasla1.txt", 'r', 'utf-8')
+    haslaa = plik_z_haslami.read()
+    plik_z_haslami.close()
+if poziom == 2:
+    plik_z_haslami = codecs.open("hasla2.txt", 'r', 'utf-8')
+    haslaa = plik_z_haslami.read()
+    plik_z_haslami.close()
+if poziom == 3:
+    plik_z_haslami = codecs.open("hasla3.txt", 'r', 'utf-8')
+    haslaa = plik_z_haslami.read()
+    plik_z_haslami.close()
+if poziom == 4:
+    plik_z_haslami = codecs.open("hasla4.txt", 'r', 'utf-8')
+    haslaa = plik_z_haslami.read()
+    plik_z_haslami.close()
 
 ### Licznik haseł ###
 hasla = str(haslaa.lower())
@@ -122,7 +149,7 @@ while zycia < 9:
     litera = input()
     if len(litera) > 1:
         print("Popelniłeś błąd! Podaj WYŁĄCZNIE JEDNĄ litere!")
-        litera = input()
+
     if litera in haslo:
         for i in range(len(haslo)):
             if haslo[i] == litera:
