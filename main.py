@@ -129,7 +129,6 @@ grafika = [ """
 #     _____         #"""]
 tablica = list(haslo)
 tablica1= list(haslo)
-print(tablica)
 zycia = 0
 for i in range(len(haslo)):
     if tablica[i] == " ":
