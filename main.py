@@ -1,6 +1,5 @@
 from random import randint
 import re
-
 ### Wczytywanie haseł z pliku ###
 plik_z_haslami = open("hasla.txt", "r")
 haslaa = plik_z_haslami.read()
@@ -28,10 +27,79 @@ for i in hasla:
         licznik1 +=1
     if licznik1 == nr_wylosowanego_hasla:
         haslo += i
-haslo.remove(".")
-for i in haslo:
-    if i == "\n":
-        haslo.remove("\n")
 
-
+haslo.remove('.')
+haslo.remove('\n')
 print(haslo)
+for i in range(len(haslo)):
+    [i] = '_'
+
+
+
+wisielec1 = [ """
+#                   #
+#                   #
+#                   #
+#                   #
+#                   #
+#                   #
+#     _____         #""","""
+#                   #
+#       |           #
+#       |           #
+#       |           #
+#       |           #
+#       |           #
+#     _____         #""","""
+#       _________   #
+#       |           #
+#       |           #
+#       |           #
+#       |           #
+#       |           #
+#     _____         #""","""
+#       _________   #
+#       | /         #
+#       |/          #
+#       |           #
+#       |           #
+#       |           #
+#     _____         #""","""
+#       _________   #
+#       | /     |   #
+#       |/          #
+#       |           #
+#       |           #
+#       |           #
+#     _____         #""","""
+#       _________   #
+#       | /     |   #
+#       |/      o   #
+#       |           #
+#       |           #
+#       |           #
+#     _____         #""","""
+#       _________   #
+#       | /    |    #
+#       |/     o    #
+#       |      |    #
+#       |           #
+#       |           #
+#     _____         #""","""
+#       _________   #
+#       | /    |    #
+#       |/     o    #
+#       |      |    #
+#       |     / \   #
+#       |           #
+#     _____         #""","""
+#       _________   #
+#       | /    |    #
+#       |/     o    #
+#       |     /|\   #
+#       |     / \   #
+#       |           #
+#     _____         #"""]
+
+print(wisielec1[8])
+
