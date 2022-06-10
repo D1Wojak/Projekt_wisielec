@@ -1,5 +1,6 @@
 from random import randint
-import re
+
+
 ### Wczytywanie haseł z pliku ###
 plik_z_haslami = open("hasla.txt", "r")
 haslaa = plik_z_haslami.read()
@@ -16,7 +17,6 @@ for i in hasla:
 
 ### Losowanie hasła ###
 nr_wylosowanego_hasla = randint(1, licznik)
-print(nr_wylosowanego_hasla)
 
 ### Wczytywanie wylosownaego hasła ###
 haslo = []
@@ -27,16 +27,13 @@ for i in hasla:
         licznik1 +=1
     if licznik1 == nr_wylosowanego_hasla:
         haslo += i
-
-haslo.remove('.')
-haslo.remove('\n')
+haslo.remove(".")
+for i in haslo:
+    if i == "\n":
+        haslo.remove("\n")
 print(haslo)
-for i in range(len(haslo)):
-    [i] = '_'
-
-
-
-wisielec1 = [ """
+### Wisielec ###
+grafika = [ """
 #                   #
 #                   #
 #                   #
@@ -101,5 +98,30 @@ wisielec1 = [ """
 #       |           #
 #     _____         #"""]
 
-print(wisielec1[8])
+print("Podaj imię: ")
+nick = input()
+
+tablica = list(haslo)
+zycia = 0
+for i in range(len(haslo)):
+    tablica[i] = "_"
+
+
+while zycia < 9:
+    print(nick + " pozostało Ci :"+ str(9-zycia) + " zyc.")
+    print(" ".join(tablica))
+
+    print("Podaj litere " + str(nick) + " :")
+    litera = input()
+    if litera in haslo:
+        for i in range(len(haslo)):
+            if haslo[i] == litera:
+                tablica[i] = litera
+    else:
+        zycia +=1
+        print(grafika[zycia-1])
+        if zycia == 9:
+            print("Przegrałeś " + nick)
+
+
 
